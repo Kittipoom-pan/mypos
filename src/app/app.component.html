@@ -1,0 +1,12 @@
+<!-- ถ้่า false จะไป login ถ้าจริงจะไป stcok -->
+<div *ngIf="authService.isLogin(); then stock; else login">ignore display</div>
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>
+
+<ng-template #stock>
+  <app-header></app-header>
+  <app-menu></app-menu>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</ng-template>
